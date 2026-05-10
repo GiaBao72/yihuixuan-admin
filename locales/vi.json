@@ -117,7 +117,8 @@
     "featured": "Nổi bật",
     "media": "Media",
     "analytics": "Phân tích",
-    "settings": "Cài đặt"
+    "settings": "Cài đặt",
+    "logout": "Đăng xuất"
   },
   "header": {
     "search": "Tìm kiếm...",

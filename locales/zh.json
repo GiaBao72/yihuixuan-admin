@@ -117,7 +117,8 @@
     "featured": "精选",
     "media": "媒体",
     "analytics": "分析",
-    "settings": "设置"
+    "settings": "设置",
+    "logout": "登出"
   },
   "header": {
     "search": "搜索...",
@@ -207,7 +208,7 @@
       "order": "Order >= 100 显示在首页",
       "slug": "URL友好标识符",
       "titleEm": "首页标题中突出显示的部分",
-      "mediaType": "选择'视频'以显示YouTube视频",
+      "mediaType": "选择视频以显示YouTube视频",
       "gallery": "其他产品图片",
       "detailedContent": "支持HTML。使用<table>显示规格。",
       "applications": "行业/用例列表",

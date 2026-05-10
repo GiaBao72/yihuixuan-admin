@@ -14,7 +14,11 @@ import {
 } from "lucide-react";
 import { useI18n } from "@/contexts/I18nContext";
 
-export function Sidebar() {
+interface SidebarProps {
+  onNavigate?: () => void;
+}
+
+export function Sidebar({ onNavigate }: SidebarProps) {
   const pathname = usePathname();
   const { t } = useI18n();
 
@@ -48,6 +52,7 @@ export function Sidebar() {
             <Link
               key={item.name}
               href={item.href}
+              onClick={onNavigate}
               className={cn(
                 "flex items-center gap-3 rounded-lg px-3 py-2 text-sm font-medium transition-colors",
                 isActive
@@ -69,7 +74,7 @@ export function Sidebar() {
           className="flex w-full items-center gap-3 rounded-lg px-3 py-2 text-sm font-medium text-muted-foreground transition-colors hover:bg-accent hover:text-accent-foreground"
         >
           <LogOut className="h-5 w-5" />
-          Logout
+          {t.sidebar?.logout || "Logout"}
         </button>
       </div>
     </div>

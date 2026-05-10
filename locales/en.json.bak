@@ -117,8 +117,7 @@
     "featured": "Featured",
     "media": "Media",
     "analytics": "Analytics",
-    "settings": "Settings",
-    "logout": "Logout"
+    "settings": "Settings"
   },
   "header": {
     "search": "Search...",
