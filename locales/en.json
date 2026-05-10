@@ -193,7 +193,8 @@
       "delete": "Delete Product",
       "addFeature": "Add Feature",
       "removeFeature": "Remove",
-      "addApplication": "Add Application"
+      "addApplication": "Add Application",
+      "addAdvantage": "Add Advantage"
     },
     "messages": {
       "loading": "Loading...",

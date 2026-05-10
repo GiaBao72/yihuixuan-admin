@@ -193,7 +193,8 @@
       "delete": "删除产品",
       "addFeature": "添加特点",
       "removeFeature": "删除",
-      "addApplication": "添加应用"
+      "addApplication": "添加应用",
+      "addAdvantage": "添加优势"
     },
     "messages": {
       "loading": "加载中...",

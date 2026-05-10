@@ -94,15 +94,37 @@ export default function ProductDetailPage() {
     
     setSaving(true);
     try {
+      // Transform data for Strapi
+      const payload = {
+        name: product.attributes.name,
+        slug: product.attributes.slug,
+        category: product.attributes.category,
+        order: product.attributes.order,
+        isActive: product.attributes.isActive,
+        titleEm: product.attributes.titleEm,
+        shortDescription: product.attributes.shortDescription,
+        fullDescription: product.attributes.fullDescription,
+        detailedContent: product.attributes.detailedContent,
+        applications: product.attributes.applications,
+        features: product.attributes.features,
+        mediaType: product.attributes.mediaType || "image",
+        videoUrl: product.attributes.videoUrl || "",
+        specs: product.attributes.specs,
+        advantages: product.attributes.advantages || [],
+        ctaText: product.attributes.ctaText || "",
+        ctaLink: product.attributes.ctaLink || "",
+      };
+
       const response = await fetch(`/api/products/${product.id}`, {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          data: product.attributes,
-        }),
+        body: JSON.stringify({ data: payload }),
       });
 
-      if (!response.ok) throw new Error("Failed to save");
+      if (!response.ok) {
+        const errorData = await response.json();
+        throw new Error(errorData.error || "Failed to save");
+      }
       
       alert(t.productDetail?.saveSuccess || "Saved successfully!");
       
@@ -112,7 +134,8 @@ export default function ProductDetailPage() {
       setProduct(refreshData.data);
     } catch (error) {
       console.error("Save error:", error);
-      alert(t.productDetail?.saveError || "Failed to save");
+      const errorMessage = error instanceof Error ? error.message : "Unknown error";
+      alert(t.productDetail?.saveError || `Failed to save: ${errorMessage}`);
     } finally {
       setSaving(false);
     }
@@ -490,42 +513,280 @@ export default function ProductDetailPage() {
             </Card>
           </div>
         )}
-        {/* Media Tab - Placeholder */}
+        {/* Media Tab */}
         {activeTab === "media" && (
-          <div className="mx-auto max-w-4xl">
+          <div className="mx-auto max-w-4xl space-y-6">
+            {/* Images */}
             <Card>
               <CardHeader>
-                <CardTitle>{t.productDetail?.sections?.media || "Media"}</CardTitle>
+                <CardTitle>{t.productDetail?.sections?.images || "Images"}</CardTitle>
               </CardHeader>
-              <CardContent>
-                <div className="rounded-lg border-2 border-dashed border-border p-12 text-center">
-                  <p className="text-muted-foreground">
-                    {t.productDetail?.placeholders?.mediaTab || "Media management (Phase 3)"}
-                  </p>
-                  <p className="mt-2 text-sm text-muted-foreground">
-                    mainImage, detailImage, gallery, mediaType, videoUrl
-                  </p>
+              <CardContent className="space-y-6">
+                {/* Main Image */}
+                <div>
+                  <ImageUpload
+                    label={t.productDetail?.fields?.mainImage || "Main Image"}
+                    helpText={t.productDetail?.help?.mainImage || "Primary product image (homepage & listing)"}
+                    value={product.attributes.mainImage?.data?.attributes?.url || ""}
+                    onChange={(url) =>
+                      setProduct({
+                        ...product,
+                        attributes: {
+                          ...product.attributes,
+                          mainImage: url ? { data: { attributes: { url } } } : undefined,
+                        },
+                      })
+                    }
+                  />
                 </div>
+
+                {/* Detail Image */}
+                <div>
+                  <ImageUpload
+                    label={t.productDetail?.fields?.detailImage || "Detail Image"}
+                    helpText={t.productDetail?.help?.detailImage || "Hero image for product detail page"}
+                    value={product.attributes.detailImage?.data?.attributes?.url || ""}
+                    onChange={(url) =>
+                      setProduct({
+                        ...product,
+                        attributes: {
+                          ...product.attributes,
+                          detailImage: url ? { data: { attributes: { url } } } : undefined,
+                        },
+                      })
+                    }
+                  />
+                </div>
+
+                {/* Gallery */}
+                <div>
+                  <GalleryUpload
+                    label={t.productDetail?.fields?.gallery || "Gallery"}
+                    helpText={t.productDetail?.help?.gallery || "Additional product images"}
+                    value={
+                      product.attributes.gallery?.data?.map((img) => img.attributes.url) || []
+                    }
+                    onChange={(urls) =>
+                      setProduct({
+                        ...product,
+                        attributes: {
+                          ...product.attributes,
+                          gallery: {
+                            data: urls.map((url) => ({ attributes: { url } })),
+                          },
+                        },
+                      })
+                    }
+                  />
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* Video */}
+            <Card>
+              <CardHeader>
+                <CardTitle>{t.productDetail?.sections?.video || "Video"}</CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-4">
+                {/* Media Type */}
+                <div>
+                  <label className="block text-sm font-medium mb-3">
+                    {t.productDetail?.fields?.mediaType || "Media Type"}
+                  </label>
+                  <div className="flex gap-4">
+                    <label className="flex items-center gap-2 cursor-pointer">
+                      <input
+                        type="radio"
+                        name="mediaType"
+                        value="image"
+                        checked={product.attributes.mediaType !== "video"}
+                        onChange={(e) =>
+                          setProduct({
+                            ...product,
+                            attributes: {
+                              ...product.attributes,
+                              mediaType: e.target.value,
+                            },
+                          })
+                        }
+                        className="h-4 w-4"
+                      />
+                      <span>{t.productDetail?.mediaTypes?.image || "Image"}</span>
+                    </label>
+                    <label className="flex items-center gap-2 cursor-pointer">
+                      <input
+                        type="radio"
+                        name="mediaType"
+                        value="video"
+                        checked={product.attributes.mediaType === "video"}
+                        onChange={(e) =>
+                          setProduct({
+                            ...product,
+                            attributes: {
+                              ...product.attributes,
+                              mediaType: e.target.value,
+                            },
+                          })
+                        }
+                        className="h-4 w-4"
+                      />
+                      <span>{t.productDetail?.mediaTypes?.video || "Video"}</span>
+                    </label>
+                  </div>
+                </div>
+
+                {/* Video URL */}
+                {product.attributes.mediaType === "video" && (
+                  <div>
+                    <label className="block text-sm font-medium mb-2">
+                      {t.productDetail?.fields?.videoUrl || "Video URL"}
+                    </label>
+                    <p className="text-xs text-muted-foreground mb-3">
+                      {t.productDetail?.help?.videoUrl || "YouTube or Vimeo URL"}
+                    </p>
+                    <Input
+                      value={product.attributes.videoUrl || ""}
+                      onChange={(e) =>
+                        setProduct({
+                          ...product,
+                          attributes: {
+                            ...product.attributes,
+                            videoUrl: e.target.value,
+                          },
+                        })
+                      }
+                      placeholder="https://www.youtube.com/watch?v=..."
+                      className="mt-1"
+                    />
+                  </div>
+                )}
               </CardContent>
             </Card>
           </div>
         )}
-
-        {/* SEO Tab - Placeholder */}
+        {/* SEO Tab */}
         {activeTab === "seo" && (
-          <div className="mx-auto max-w-4xl">
+          <div className="mx-auto max-w-4xl space-y-6">
+            {/* Specifications */}
             <Card>
               <CardHeader>
-                <CardTitle>{t.productDetail?.sections?.seo || "SEO & Marketing"}</CardTitle>
+                <CardTitle>{t.productDetail?.sections?.specifications || "Specifications"}</CardTitle>
               </CardHeader>
               <CardContent>
-                <div className="rounded-lg border-2 border-dashed border-border p-12 text-center">
-                  <p className="text-muted-foreground">
-                    {t.productDetail?.placeholders?.seoTab || "SEO & marketing fields (Phase 3)"}
+                <div>
+                  <label className="block text-sm font-medium mb-2">
+                    {t.productDetail?.fields?.specs || "Specs (JSON)"}
+                  </label>
+                  <p className="text-xs text-muted-foreground mb-3">
+                    {t.productDetail?.help?.specs || "Technical specifications in JSON format"}
                   </p>
-                  <p className="mt-2 text-sm text-muted-foreground">
-                    specs, advantages, ctaText, ctaLink
-                  </p>
+                  <Textarea
+                    value={
+                      product.attributes.specs
+                        ? JSON.stringify(product.attributes.specs, null, 2)
+                        : ""
+                    }
+                    onChange={(e) => {
+                      try {
+                        const parsed = e.target.value ? JSON.parse(e.target.value) : null;
+                        setProduct({
+                          ...product,
+                          attributes: {
+                            ...product.attributes,
+                            specs: parsed,
+                          },
+                        });
+                      } catch (err) {
+                        // Invalid JSON - store as string temporarily
+                        setProduct({
+                          ...product,
+                          attributes: {
+                            ...product.attributes,
+                            specs: e.target.value,
+                          },
+                        });
+                      }
+                    }}
+                    rows={8}
+                    className="font-mono text-sm"
+                    placeholder='{"power": "5W/10W", "wavelength": "450nm"}'
+                  />
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* Advantages */}
+            <Card>
+              <CardHeader>
+                <CardTitle>{t.productDetail?.sections?.advantages || "Advantages"}</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <div>
+                  <label className="block text-sm font-medium mb-2">
+                    {t.productDetail?.fields?.advantages || "Product Advantages"}
+                  </label>
+                  <ArrayInput
+                    value={product.attributes.advantages || []}
+                    onChange={(advantages) =>
+                      setProduct({
+                        ...product,
+                        attributes: {
+                          ...product.attributes,
+                          advantages,
+                        },
+                      })
+                    }
+                    labels={{
+                      addItem: t.productDetail?.actions?.addAdvantage || "Add Advantage",
+                      placeholder: t.productDetail?.placeholders?.advantage || "Enter advantage",
+                    }}
+                  />
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* Call to Action */}
+            <Card>
+              <CardHeader>
+                <CardTitle>{t.productDetail?.sections?.cta || "Call to Action"}</CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-4">
+                <div>
+                  <label className="block text-sm font-medium mb-2">
+                    {t.productDetail?.fields?.ctaText || "CTA Text"}
+                  </label>
+                  <Input
+                    value={product.attributes.ctaText || ""}
+                    onChange={(e) =>
+                      setProduct({
+                        ...product,
+                        attributes: {
+                          ...product.attributes,
+                          ctaText: e.target.value,
+                        },
+                      })
+                    }
+                    placeholder={t.productDetail?.placeholders?.ctaText || "Learn More"}
+                  />
+                </div>
+
+                <div>
+                  <label className="block text-sm font-medium mb-2">
+                    {t.productDetail?.fields?.ctaLink || "CTA Link"}
+                  </label>
+                  <Input
+                    value={product.attributes.ctaLink || ""}
+                    onChange={(e) =>
+                      setProduct({
+                        ...product,
+                        attributes: {
+                          ...product.attributes,
+                          ctaLink: e.target.value,
+                        },
+                      })
+                    }
+                    placeholder={t.productDetail?.placeholders?.ctaLink || "/contact"}
+                  />
                 </div>
               </CardContent>
             </Card>

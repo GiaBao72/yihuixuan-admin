@@ -193,7 +193,8 @@
       "delete": "Xóa sản phẩm",
       "addFeature": "Thêm tính năng",
       "removeFeature": "Xóa",
-      "addApplication": "Thêm ứng dụng"
+      "addApplication": "Thêm ứng dụng",
+      "addAdvantage": "Thêm ưu điểm"
     },
     "messages": {
       "loading": "Đang tải...",
