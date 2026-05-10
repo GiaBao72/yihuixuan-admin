@@ -11,14 +11,16 @@ import {
   BarChart3,
   Settings,
   LogOut,
+  X,
 } from "lucide-react";
 import { useI18n } from "@/contexts/I18nContext";
 
 interface SidebarProps {
   onNavigate?: () => void;
+  onClose?: () => void;
 }
 
-export function Sidebar({ onNavigate }: SidebarProps) {
+export function Sidebar({ onNavigate, onClose }: SidebarProps) {
   const pathname = usePathname();
   const { t } = useI18n();
 
@@ -39,9 +41,19 @@ export function Sidebar({ onNavigate }: SidebarProps) {
   return (
     <div className="flex h-full w-[85vw] max-w-sm flex-col border-r border-border bg-black shadow-2xl lg:w-64 lg:bg-card lg:shadow-none">
       {/* Logo */}
-      <div className="flex h-16 items-center border-b border-border bg-black px-6 lg:bg-card">
-        <h1 className="text-xl font-bold text-primary">Yihuixuan</h1>
-        <span className="ml-2 text-xs text-muted-foreground">Admin</span>
+      <div className="flex h-16 items-center justify-between border-b border-border bg-black px-6 lg:bg-card">
+        <div className="flex items-center">
+          <h1 className="text-xl font-bold text-primary">Yihuixuan</h1>
+          <span className="ml-2 text-xs text-muted-foreground">Admin</span>
+        </div>
+        {/* Close button - mobile only */}
+        <button
+          onClick={onClose}
+          className="flex h-8 w-8 items-center justify-center rounded-lg text-muted-foreground transition-colors hover:bg-accent hover:text-accent-foreground lg:hidden"
+          aria-label="Close menu"
+        >
+          <X className="h-5 w-5" />
+        </button>
       </div>
 
       {/* Navigation */}

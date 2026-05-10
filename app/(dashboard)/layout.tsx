@@ -43,7 +43,10 @@ export default function DashboardLayout({
             sidebarOpen ? "translate-x-0" : "-translate-x-full"
           }`}
         >
-          <Sidebar onNavigate={() => setSidebarOpen(false)} />
+          <Sidebar 
+            onNavigate={() => setSidebarOpen(false)}
+            onClose={() => setSidebarOpen(false)}
+          />
         </div>
 
         {/* Main content */}
