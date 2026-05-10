@@ -37,7 +37,7 @@ export function Sidebar({ onNavigate }: SidebarProps) {
   };
 
   return (
-    <div className="flex h-full w-64 flex-col border-r border-border bg-card">
+    <div className="flex h-full w-[85vw] max-w-sm flex-col border-r border-border bg-card shadow-2xl lg:w-64 lg:shadow-none">
       {/* Logo */}
       <div className="flex h-16 items-center border-b border-border px-6">
         <h1 className="text-xl font-bold text-primary">Yihuixuan</h1>
@@ -45,7 +45,7 @@ export function Sidebar({ onNavigate }: SidebarProps) {
       </div>
 
       {/* Navigation */}
-      <nav className="flex-1 space-y-1 p-4">
+      <nav className="flex-1 space-y-1 overflow-y-auto p-4">
         {navigation.map((item) => {
           const isActive = pathname === item.href;
           return (
