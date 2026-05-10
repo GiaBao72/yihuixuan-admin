@@ -1,0 +1,126 @@
+{
+  "dashboard": {
+    "title": "仪表板",
+    "subtitle": "欢迎回来！这是您内容的概览。",
+    "stats": {
+      "totalProducts": "总产品数",
+      "productsWithImages": "带图片的产品",
+      "featuredProducts": "精选产品",
+      "totalLocales": "总语言数",
+      "languages": "语言",
+      "coverage": "覆盖率",
+      "homepage": "首页显示"
+    },
+    "quickActions": {
+      "title": "快速操作",
+      "viewProducts": "查看产品",
+      "mediaLibrary": "媒体库",
+      "manageFeatured": "管理精选"
+    }
+  },
+  "products": {
+    "title": "产品",
+    "subtitle": "管理您的产品目录",
+    "addProduct": "添加产品",
+    "allProducts": "所有产品",
+    "table": {
+      "order": "顺序",
+      "name": "名称",
+      "category": "类别",
+      "status": "状态",
+      "image": "图片",
+      "actions": "操作",
+      "active": "活跃",
+      "inactive": "未活跃",
+      "edit": "编辑"
+    }
+  },
+  "featured": {
+    "title": "精选产品",
+    "subtitle": "管理首页显示的产品（按顺序前5名）",
+    "homepageFeatured": "首页精选",
+    "howItWorks": "工作原理",
+    "instructions": [
+      "顺序 ≤ 5 的产品会自动在首页精选",
+      "顺序数字越小 = 优先级越高",
+      "在 Strapi CMS 或产品页面编辑产品顺序",
+      "更改立即反映在前端"
+    ],
+    "noProducts": "还没有精选产品。顺序 ≤ 5 的产品将显示在这里。"
+  },
+  "media": {
+    "title": "媒体库",
+    "subtitle": "浏览产品图片",
+    "productImages": "产品图片",
+    "images": "图片",
+    "noImages": "未找到图片"
+  },
+  "analytics": {
+    "title": "分析",
+    "subtitle": "内容统计和洞察",
+    "stats": {
+      "totalProducts": "总产品数",
+      "languages": "语言",
+      "categories": "类别",
+      "imageCoverage": "图片覆盖率",
+      "active": "活跃",
+      "products": "产品"
+    },
+    "productsByCategory": "按类别分类的产品",
+    "contentStatus": "内容状态",
+    "activeProducts": "活跃产品",
+    "inactiveProducts": "未活跃产品",
+    "withImages": "有图片",
+    "withoutImages": "无图片",
+    "localizationCoverage": "本地化覆盖率",
+    "vietnamese": "越南语",
+    "english": "英语",
+    "chinese": "中文"
+  },
+  "settings": {
+    "title": "设置",
+    "subtitle": "系统配置和集成",
+    "strapiCms": "Strapi CMS",
+    "apiUrl": "API URL",
+    "status": "状态",
+    "connected": "已连接",
+    "openStrapiAdmin": "打开 Strapi 管理",
+    "frontendWebsite": "前端网站",
+    "publicUrl": "公共 URL",
+    "online": "在线",
+    "viewWebsite": "查看网站",
+    "systemInfo": "系统信息",
+    "adminVersion": "管理面板版本",
+    "nextjsVersion": "Next.js 版本",
+    "nodeEnv": "Node 环境",
+    "production": "生产环境",
+    "port": "端口",
+    "internal": "内部",
+    "external": "外部",
+    "quickLinks": "快速链接",
+    "dashboard": "仪表板",
+    "dashboardDesc": "概览和统计",
+    "products": "产品",
+    "productsDesc": "管理目录",
+    "featured": "精选",
+    "featuredDesc": "首页产品",
+    "media": "媒体",
+    "mediaDesc": "图片库",
+    "strapiCmsLink": "Strapi CMS",
+    "strapiDesc": "内容管理",
+    "website": "网站",
+    "websiteDesc": "查看前端"
+  },
+  "sidebar": {
+    "dashboard": "仪表板",
+    "products": "产品",
+    "featured": "精选",
+    "media": "媒体",
+    "analytics": "分析",
+    "settings": "设置"
+  },
+  "header": {
+    "search": "搜索...",
+    "notifications": "通知"
+  }
+}

@@ -1,0 +1,126 @@
+{
+  "dashboard": {
+    "title": "Dashboard",
+    "subtitle": "Welcome back! Here's an overview of your content.",
+    "stats": {
+      "totalProducts": "Total Products",
+      "productsWithImages": "Products with Images",
+      "featuredProducts": "Featured Products",
+      "totalLocales": "Total Locales",
+      "languages": "languages",
+      "coverage": "coverage",
+      "homepage": "Homepage display"
+    },
+    "quickActions": {
+      "title": "Quick Actions",
+      "viewProducts": "View Products",
+      "mediaLibrary": "Media Library",
+      "manageFeatured": "Manage Featured"
+    }
+  },
+  "products": {
+    "title": "Products",
+    "subtitle": "Manage your product catalog",
+    "addProduct": "Add Product",
+    "allProducts": "All Products",
+    "table": {
+      "order": "Order",
+      "name": "Name",
+      "category": "Category",
+      "status": "Status",
+      "image": "Image",
+      "actions": "Actions",
+      "active": "Active",
+      "inactive": "Inactive",
+      "edit": "Edit"
+    }
+  },
+  "featured": {
+    "title": "Featured Products",
+    "subtitle": "Manage products displayed on homepage (top 5 by order)",
+    "homepageFeatured": "Homepage Featured",
+    "howItWorks": "How it works",
+    "instructions": [
+      "Products with order ≤ 5 are automatically featured on homepage",
+      "Lower order number = higher priority",
+      "Edit product order in Strapi CMS or Products page",
+      "Changes reflect immediately on frontend"
+    ],
+    "noProducts": "No featured products yet. Products with order ≤ 5 will appear here."
+  },
+  "media": {
+    "title": "Media Library",
+    "subtitle": "Browse product images",
+    "productImages": "Product Images",
+    "images": "images",
+    "noImages": "No images found"
+  },
+  "analytics": {
+    "title": "Analytics",
+    "subtitle": "Content statistics and insights",
+    "stats": {
+      "totalProducts": "Total Products",
+      "languages": "Languages",
+      "categories": "Categories",
+      "imageCoverage": "Image Coverage",
+      "active": "active",
+      "products": "products"
+    },
+    "productsByCategory": "Products by Category",
+    "contentStatus": "Content Status",
+    "activeProducts": "Active Products",
+    "inactiveProducts": "Inactive Products",
+    "withImages": "With Images",
+    "withoutImages": "Without Images",
+    "localizationCoverage": "Localization Coverage",
+    "vietnamese": "Vietnamese",
+    "english": "English",
+    "chinese": "Chinese"
+  },
+  "settings": {
+    "title": "Settings",
+    "subtitle": "System configuration and integrations",
+    "strapiCms": "Strapi CMS",
+    "apiUrl": "API URL",
+    "status": "Status",
+    "connected": "Connected",
+    "openStrapiAdmin": "Open Strapi Admin",
+    "frontendWebsite": "Frontend Website",
+    "publicUrl": "Public URL",
+    "online": "Online",
+    "viewWebsite": "View Website",
+    "systemInfo": "System Information",
+    "adminVersion": "Admin Panel Version",
+    "nextjsVersion": "Next.js Version",
+    "nodeEnv": "Node Environment",
+    "production": "Production",
+    "port": "Port",
+    "internal": "Internal",
+    "external": "External",
+    "quickLinks": "Quick Links",
+    "dashboard": "Dashboard",
+    "dashboardDesc": "Overview & stats",
+    "products": "Products",
+    "productsDesc": "Manage catalog",
+    "featured": "Featured",
+    "featuredDesc": "Homepage products",
+    "media": "Media",
+    "mediaDesc": "Image library",
+    "strapiCmsLink": "Strapi CMS",
+    "strapiDesc": "Content management",
+    "website": "Website",
+    "websiteDesc": "View frontend"
+  },
+  "sidebar": {
+    "dashboard": "Dashboard",
+    "products": "Products",
+    "featured": "Featured",
+    "media": "Media",
+    "analytics": "Analytics",
+    "settings": "Settings"
+  },
+  "header": {
+    "search": "Search...",
+    "notifications": "Notifications"
+  }
+}

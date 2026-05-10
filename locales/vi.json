@@ -1,0 +1,126 @@
+{
+  "dashboard": {
+    "title": "Bảng điều khiển",
+    "subtitle": "Chào mừng trở lại! Đây là tổng quan nội dung của bạn.",
+    "stats": {
+      "totalProducts": "Tổng sản phẩm",
+      "productsWithImages": "Sản phẩm có ảnh",
+      "featuredProducts": "Sản phẩm nổi bật",
+      "totalLocales": "Tổng ngôn ngữ",
+      "languages": "ngôn ngữ",
+      "coverage": "độ phủ",
+      "homepage": "Hiển thị trang chủ"
+    },
+    "quickActions": {
+      "title": "Thao tác nhanh",
+      "viewProducts": "Xem sản phẩm",
+      "mediaLibrary": "Thư viện media",
+      "manageFeatured": "Quản lý nổi bật"
+    }
+  },
+  "products": {
+    "title": "Sản phẩm",
+    "subtitle": "Quản lý danh mục sản phẩm",
+    "addProduct": "Thêm sản phẩm",
+    "allProducts": "Tất cả sản phẩm",
+    "table": {
+      "order": "Thứ tự",
+      "name": "Tên",
+      "category": "Danh mục",
+      "status": "Trạng thái",
+      "image": "Hình ảnh",
+      "actions": "Thao tác",
+      "active": "Hoạt động",
+      "inactive": "Không hoạt động",
+      "edit": "Chỉnh sửa"
+    }
+  },
+  "featured": {
+    "title": "Sản phẩm nổi bật",
+    "subtitle": "Quản lý sản phẩm hiển thị trên trang chủ (top 5 theo thứ tự)",
+    "homepageFeatured": "Nổi bật trang chủ",
+    "howItWorks": "Cách hoạt động",
+    "instructions": [
+      "Sản phẩm có thứ tự ≤ 5 sẽ tự động nổi bật trên trang chủ",
+      "Số thứ tự thấp hơn = ưu tiên cao hơn",
+      "Chỉnh sửa thứ tự sản phẩm trong Strapi CMS hoặc trang Sản phẩm",
+      "Thay đổi phản ánh ngay lập tức trên frontend"
+    ],
+    "noProducts": "Chưa có sản phẩm nổi bật. Sản phẩm có thứ tự ≤ 5 sẽ xuất hiện ở đây."
+  },
+  "media": {
+    "title": "Thư viện Media",
+    "subtitle": "Duyệt hình ảnh sản phẩm",
+    "productImages": "Hình ảnh sản phẩm",
+    "images": "hình ảnh",
+    "noImages": "Không tìm thấy hình ảnh"
+  },
+  "analytics": {
+    "title": "Phân tích",
+    "subtitle": "Thống kê và thông tin chi tiết nội dung",
+    "stats": {
+      "totalProducts": "Tổng sản phẩm",
+      "languages": "Ngôn ngữ",
+      "categories": "Danh mục",
+      "imageCoverage": "Độ phủ hình ảnh",
+      "active": "hoạt động",
+      "products": "sản phẩm"
+    },
+    "productsByCategory": "Sản phẩm theo danh mục",
+    "contentStatus": "Trạng thái nội dung",
+    "activeProducts": "Sản phẩm hoạt động",
+    "inactiveProducts": "Sản phẩm không hoạt động",
+    "withImages": "Có hình ảnh",
+    "withoutImages": "Không có hình ảnh",
+    "localizationCoverage": "Độ phủ bản địa hóa",
+    "vietnamese": "Tiếng Việt",
+    "english": "Tiếng Anh",
+    "chinese": "Tiếng Trung"
+  },
+  "settings": {
+    "title": "Cài đặt",
+    "subtitle": "Cấu hình hệ thống và tích hợp",
+    "strapiCms": "Strapi CMS",
+    "apiUrl": "URL API",
+    "status": "Trạng thái",
+    "connected": "Đã kết nối",
+    "openStrapiAdmin": "Mở Strapi Admin",
+    "frontendWebsite": "Website Frontend",
+    "publicUrl": "URL công khai",
+    "online": "Trực tuyến",
+    "viewWebsite": "Xem Website",
+    "systemInfo": "Thông tin hệ thống",
+    "adminVersion": "Phiên bản Admin Panel",
+    "nextjsVersion": "Phiên bản Next.js",
+    "nodeEnv": "Môi trường Node",
+    "production": "Production",
+    "port": "Cổng",
+    "internal": "Nội bộ",
+    "external": "Bên ngoài",
+    "quickLinks": "Liên kết nhanh",
+    "dashboard": "Bảng điều khiển",
+    "dashboardDesc": "Tổng quan & thống kê",
+    "products": "Sản phẩm",
+    "productsDesc": "Quản lý danh mục",
+    "featured": "Nổi bật",
+    "featuredDesc": "Sản phẩm trang chủ",
+    "media": "Media",
+    "mediaDesc": "Thư viện hình ảnh",
+    "strapiCmsLink": "Strapi CMS",
+    "strapiDesc": "Quản lý nội dung",
+    "website": "Website",
+    "websiteDesc": "Xem frontend"
+  },
+  "sidebar": {
+    "dashboard": "Bảng điều khiển",
+    "products": "Sản phẩm",
+    "featured": "Nổi bật",
+    "media": "Media",
+    "analytics": "Phân tích",
+    "settings": "Cài đặt"
+  },
+  "header": {
+    "search": "Tìm kiếm...",
+    "notifications": "Thông báo"
+  }
+}
