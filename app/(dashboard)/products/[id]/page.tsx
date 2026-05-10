@@ -163,43 +163,44 @@ export default function ProductDetailPage() {
   return (
     <div className="flex h-full flex-col">
       {/* Header */}
-      <div className="flex items-center justify-between border-b border-border bg-card px-6 py-4">
-        <div className="flex items-center gap-4">
+      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 sm:gap-0 border-b border-border bg-card px-4 sm:px-6 py-3 sm:py-4">
+        <div className="flex items-center gap-2 sm:gap-4">
           <Button
             variant="ghost"
             size="sm"
             onClick={() => router.push("/products")}
+            className="shrink-0"
           >
-            <ArrowLeft className="h-4 w-4 mr-2" />
-            {t.productDetail?.backToList || "Back to list"}
+            <ArrowLeft className="h-4 w-4 sm:mr-2" />
+            <span className="hidden sm:inline">{t.productDetail?.backToList || "Back to list"}</span>
           </Button>
-          <div>
-            <h1 className="text-2xl font-bold">{product.attributes.name}</h1>
-            <p className="text-sm text-muted-foreground">
+          <div className="min-w-0">
+            <h1 className="text-lg sm:text-2xl font-bold truncate">{product.attributes.name}</h1>
+            <p className="text-xs sm:text-sm text-muted-foreground">
               ID: {product.id} • {product.attributes.locale.toUpperCase()}
             </p>
           </div>
         </div>
-        <div className="flex items-center gap-2">
-          <Button variant="outline" size="sm" onClick={handleDelete}>
-            <Trash2 className="h-4 w-4 mr-2" />
-            {t.productDetail?.delete || "Delete"}
+        <div className="flex items-center gap-2 ml-auto sm:ml-0">
+          <Button variant="outline" size="sm" onClick={handleDelete} className="flex-1 sm:flex-none">
+            <Trash2 className="h-4 w-4 sm:mr-2" />
+            <span className="hidden sm:inline">{t.productDetail?.delete || "Delete"}</span>
           </Button>
-          <Button size="sm" onClick={handleSave}>
-            <Save className="h-4 w-4 mr-2" />
-            {t.productDetail?.save || "Save"}
+          <Button size="sm" onClick={handleSave} disabled={saving} className="flex-1 sm:flex-none">
+            <Save className="h-4 w-4 sm:mr-2" />
+            <span className="hidden sm:inline">{saving ? "Saving..." : t.productDetail?.save || "Save"}</span>
           </Button>
         </div>
       </div>
 
       {/* Tabs */}
-      <div className="border-b border-border bg-card px-6">
-        <div className="flex gap-6">
+      <div className="border-b border-border bg-card px-4 sm:px-6">
+        <div className="flex gap-4 sm:gap-6 overflow-x-auto scrollbar-hide">
           {["basic", "content", "media", "seo"].map((tab) => (
             <button
               key={tab}
               onClick={() => setActiveTab(tab as any)}
-              className={`py-3 text-sm font-medium transition-colors border-b-2 ${
+              className={`py-3 px-1 text-sm font-medium transition-colors border-b-2 whitespace-nowrap shrink-0 ${
                 activeTab === tab
                   ? "border-primary text-primary"
                   : "border-transparent text-muted-foreground hover:text-foreground"
@@ -212,10 +213,10 @@ export default function ProductDetailPage() {
       </div>
 
       {/* Content */}
-      <div className="flex-1 overflow-y-auto p-6">
+      <div className="flex-1 overflow-y-auto p-4 sm:p-6">
         {/* Basic Info Tab */}
         {activeTab === "basic" && (
-          <div className="mx-auto max-w-4xl space-y-6">
+          <div className="mx-auto max-w-4xl space-y-4 sm:space-y-6">
             <Card>
               <CardHeader>
                 <CardTitle>{t.productDetail?.sections?.basicInfo || "Basic Information"}</CardTitle>
@@ -297,7 +298,7 @@ export default function ProductDetailPage() {
                 {/* isActive */}
                 <div>
                   <label className="text-sm font-medium">{t.productDetail?.fields?.status || "Status"}</label>
-                  <div className="mt-2 flex gap-4">
+                  <div className="mt-2 flex flex-wrap gap-3 sm:gap-4">
                     <label className="flex items-center gap-2">
                       <input
                         type="radio"
@@ -337,7 +338,7 @@ export default function ProductDetailPage() {
                 <CardTitle>{t.productDetail?.sections?.systemInfo || "System Information"}</CardTitle>
               </CardHeader>
               <CardContent className="space-y-3">
-                <div className="grid grid-cols-2 gap-4 text-sm">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 text-sm">
                   <div>
                     <span className="font-medium">{t.productDetail?.fields?.locale || "Locale"}:</span>
                     <span className="ml-2 text-muted-foreground">{product.attributes.locale}</span>
@@ -369,7 +370,7 @@ export default function ProductDetailPage() {
         )}
         {/* Content Tab */}
         {activeTab === "content" && (
-          <div className="mx-auto max-w-4xl space-y-6">
+          <div className="mx-auto max-w-4xl space-y-4 sm:space-y-6">
             {/* Text Content */}
             <Card>
               <CardHeader>
@@ -515,7 +516,7 @@ export default function ProductDetailPage() {
         )}
         {/* Media Tab */}
         {activeTab === "media" && (
-          <div className="mx-auto max-w-4xl space-y-6">
+          <div className="mx-auto max-w-4xl space-y-4 sm:space-y-6">
             {/* Images */}
             <Card>
               <CardHeader>
@@ -593,7 +594,7 @@ export default function ProductDetailPage() {
                   <label className="block text-sm font-medium mb-3">
                     {t.productDetail?.fields?.mediaType || "Media Type"}
                   </label>
-                  <div className="flex gap-4">
+                  <div className="flex flex-wrap gap-3 sm:gap-4">
                     <label className="flex items-center gap-2 cursor-pointer">
                       <input
                         type="radio"
@@ -666,7 +667,7 @@ export default function ProductDetailPage() {
         )}
         {/* SEO Tab */}
         {activeTab === "seo" && (
-          <div className="mx-auto max-w-4xl space-y-6">
+          <div className="mx-auto max-w-4xl space-y-4 sm:space-y-6">
             {/* Specifications */}
             <Card>
               <CardHeader>
