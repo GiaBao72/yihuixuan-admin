@@ -1,11 +1,14 @@
-import { NextResponse } from "next/server";
+import { NextRequest, NextResponse } from "next/server";
 
 const STRAPI_URL = process.env.NEXT_PUBLIC_STRAPI_URL || "http://localhost:1337";
 
-export async function GET() {
+export async function GET(request: NextRequest) {
   try {
+    const searchParams = request.nextUrl.searchParams;
+    const locale = searchParams.get("locale") || "vi";
+
     const response = await fetch(
-      `${STRAPI_URL}/api/products?populate=mainImage&locale=all`,
+      `${STRAPI_URL}/api/products?populate=mainImage&locale=${locale}`,
       {
         headers: {
           "Content-Type": "application/json",

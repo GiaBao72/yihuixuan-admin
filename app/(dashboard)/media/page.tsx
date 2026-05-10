@@ -1,4 +1,3 @@
-
 "use client";
 
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -22,12 +21,13 @@ interface Product {
 }
 
 export default function MediaPage() {
-  const { t } = useI18n();
+  const { t, locale } = useI18n();
   const [images, setImages] = useState<any[]>([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch('/api/products')
+    setLoading(true);
+    fetch(`/api/products?locale=${locale}`)
       .then(res => res.json())
       .then(data => {
         const allImages = (data.data || [])
@@ -42,7 +42,7 @@ export default function MediaPage() {
         setLoading(false);
       })
       .catch(() => setLoading(false));
-  }, []);
+  }, [locale]);
 
   if (loading) return <div className="p-6">Loading...</div>;
 

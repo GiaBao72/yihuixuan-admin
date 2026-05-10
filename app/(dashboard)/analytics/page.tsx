@@ -17,19 +17,20 @@ interface Product {
 }
 
 export default function AnalyticsPage() {
-  const { t } = useI18n();
+  const { t, locale } = useI18n();
   const [products, setProducts] = useState<Product[]>([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch('/api/products')
+    setLoading(true);
+    fetch(`/api/products?locale=${locale}`)
       .then(res => res.json())
       .then(data => {
         setProducts(data.data || []);
         setLoading(false);
       })
       .catch(() => setLoading(false));
-  }, []);
+  }, [locale]);
 
   if (loading) return <div className="p-6">Loading...</div>;
 

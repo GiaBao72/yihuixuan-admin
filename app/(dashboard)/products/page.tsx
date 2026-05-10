@@ -1,4 +1,3 @@
-
 "use client";
 
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -19,19 +18,20 @@ interface Product {
 }
 
 export default function ProductsPage() {
-  const { t } = useI18n();
+  const { t, locale } = useI18n();
   const [products, setProducts] = useState<Product[]>([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch('/api/products')
+    setLoading(true);
+    fetch(`/api/products?locale=${locale}`)
       .then(res => res.json())
       .then(data => {
         setProducts(data.data || []);
         setLoading(false);
       })
       .catch(() => setLoading(false));
-  }, []);
+  }, [locale]);
 
   if (loading) return <div className="p-6">Loading...</div>;
 
@@ -77,7 +77,7 @@ export default function ProductsPage() {
                       <div>
                         <p className="font-medium">{product.attributes.name}</p>
                         <p className="text-sm text-muted-foreground">
-                          {product.attributes.shortDescription.slice(0, 60)}...
+                          {product.attributes.shortDescription?.slice(0, 60)}...
                         </p>
                       </div>
                     </td>
@@ -87,7 +87,7 @@ export default function ProductsPage() {
                       </span>
                     </td>
                     <td className="py-4">
-                      <span className={`inline-flex rounded-full px-2 py-1 text-xs font-medium ${
+                      <span className={`inline-flex rounded-full px-2 py-1 text-xs font-medium ${ 
                         product.attributes.isActive
                           ? 'bg-green-500/10 text-green-500'
                           : 'bg-red-500/10 text-red-500'
