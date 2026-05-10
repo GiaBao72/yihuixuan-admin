@@ -122,5 +122,83 @@
   "header": {
     "search": "Search...",
     "notifications": "Notifications"
+  },
+  "productDetail": {
+    "title": "Product Detail",
+    "subtitle": "View and edit product information",
+    "backToProducts": "Back to list",
+    "tabs": {
+      "basic": "Basic Info",
+      "content": "Content",
+      "media": "Media",
+      "seo": "SEO & Settings"
+    },
+    "fields": {
+      "id": "ID",
+      "name": "Product Name",
+      "slug": "Slug (URL)",
+      "category": "Category",
+      "order": "Order",
+      "isActive": "Status",
+      "shortDescription": "Short Description",
+      "fullDescription": "Full Description",
+      "detailedContent": "Detailed Content",
+      "titleEm": "Emphasized Title",
+      "applications": "Applications",
+      "features": "Features",
+      "featureTitle": "Feature Title",
+      "featureDescription": "Feature Description",
+      "specs": "Specifications",
+      "advantages": "Advantages",
+      "mediaType": "Media Type",
+      "videoUrl": "Video URL (YouTube)",
+      "mainImage": "Main Image",
+      "detailImage": "Detail Image",
+      "gallery": "Gallery",
+      "ctaText": "CTA Button Text",
+      "ctaLink": "CTA Link",
+      "locale": "Language",
+      "createdAt": "Created At",
+      "updatedAt": "Last Updated",
+      "publishedAt": "Published At"
+    },
+    "placeholders": {
+      "name": "Enter product name...",
+      "slug": "laser-cutting-machine",
+      "shortDescription": "Brief description of the product...",
+      "titleEm": "Laser",
+      "videoUrl": "https://www.youtube.com/watch?v=...",
+      "ctaText": "View Details",
+      "ctaLink": "#"
+    },
+    "options": {
+      "active": "Active",
+      "inactive": "Inactive",
+      "image": "Image",
+      "video": "Video",
+      "showOnHomepage": "Show on Homepage"
+    },
+    "actions": {
+      "save": "Save Changes",
+      "cancel": "Cancel",
+      "delete": "Delete Product",
+      "addFeature": "Add Feature",
+      "removeFeature": "Remove",
+      "addApplication": "Add Application"
+    },
+    "messages": {
+      "loading": "Loading...",
+      "notFound": "Product not found",
+      "saveSuccess": "Saved successfully",
+      "saveError": "Error saving",
+      "deleteConfirm": "Are you sure you want to delete this product?"
+    },
+    "help": {
+      "order": "Order ≥ 100: Show on homepage",
+      "slug": "SEO-friendly URL (auto-generated from name)",
+      "titleEm": "Emphasized part of title (e.g., 'Laser', '激光')",
+      "mediaType": "Choose 'Video' to display YouTube video",
+      "gallery": "Minimum 9 images for masonry grid on homepage"
+    }
   }
 }

@@ -107,7 +107,7 @@ export default function ProductsPage() {
                       )}
                     </td>
                     <td className="py-4 text-right">
-                      <button className="inline-flex items-center gap-2 rounded-lg border border-border px-3 py-1.5 text-sm hover:bg-accent">
+                      <button onClick={() => window.location.href = `/products/${product.id}`} className="inline-flex items-center gap-2 rounded-lg border border-border px-3 py-1.5 text-sm hover:bg-accent">
                         <Edit className="h-3 w-3" />
                         {t.products.table.edit}
                       </button>

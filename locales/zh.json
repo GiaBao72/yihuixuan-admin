@@ -122,5 +122,83 @@
   "header": {
     "search": "搜索...",
     "notifications": "通知"
+  },
+  "productDetail": {
+    "title": "产品详情",
+    "subtitle": "查看和编辑产品信息",
+    "backToProducts": "返回列表",
+    "tabs": {
+      "basic": "基本信息",
+      "content": "内容",
+      "media": "媒体",
+      "seo": "SEO与设置"
+    },
+    "fields": {
+      "id": "ID",
+      "name": "产品名称",
+      "slug": "Slug (URL)",
+      "category": "类别",
+      "order": "顺序",
+      "isActive": "状态",
+      "shortDescription": "简短描述",
+      "fullDescription": "完整描述",
+      "detailedContent": "详细内容",
+      "titleEm": "强调标题",
+      "applications": "应用",
+      "features": "特点",
+      "featureTitle": "特点标题",
+      "featureDescription": "特点描述",
+      "specs": "技术规格",
+      "advantages": "优势",
+      "mediaType": "媒体类型",
+      "videoUrl": "视频URL (YouTube)",
+      "mainImage": "主图",
+      "detailImage": "详情图",
+      "gallery": "图库",
+      "ctaText": "CTA按钮文本",
+      "ctaLink": "CTA链接",
+      "locale": "语言",
+      "createdAt": "创建时间",
+      "updatedAt": "最后更新",
+      "publishedAt": "发布时间"
+    },
+    "placeholders": {
+      "name": "输入产品名称...",
+      "slug": "laser-cutting-machine",
+      "shortDescription": "产品简要描述...",
+      "titleEm": "激光",
+      "videoUrl": "https://www.youtube.com/watch?v=...",
+      "ctaText": "查看详情",
+      "ctaLink": "#"
+    },
+    "options": {
+      "active": "活跃",
+      "inactive": "未活跃",
+      "image": "图片",
+      "video": "视频",
+      "showOnHomepage": "在首页显示"
+    },
+    "actions": {
+      "save": "保存更改",
+      "cancel": "取消",
+      "delete": "删除产品",
+      "addFeature": "添加特点",
+      "removeFeature": "删除",
+      "addApplication": "添加应用"
+    },
+    "messages": {
+      "loading": "加载中...",
+      "notFound": "未找到产品",
+      "saveSuccess": "保存成功",
+      "saveError": "保存错误",
+      "deleteConfirm": "您确定要删除此产品吗？"
+    },
+    "help": {
+      "order": "顺序 ≥ 100: 在首页显示",
+      "slug": "SEO友好的URL（从名称自动生成）",
+      "titleEm": "标题的强调部分（例如：'Laser'，'激光'）",
+      "mediaType": "选择'视频'以显示YouTube视频",
+      "gallery": "首页masonry网格至少需要9张图片"
+    }
   }
 }

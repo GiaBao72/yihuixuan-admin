@@ -122,5 +122,83 @@
   "header": {
     "search": "Tìm kiếm...",
     "notifications": "Thông báo"
+  },
+  "productDetail": {
+    "title": "Chi tiết sản phẩm",
+    "subtitle": "Xem và chỉnh sửa thông tin sản phẩm",
+    "backToProducts": "Quay lại danh sách",
+    "tabs": {
+      "basic": "Thông tin cơ bản",
+      "content": "Nội dung",
+      "media": "Media",
+      "seo": "SEO & Cài đặt"
+    },
+    "fields": {
+      "id": "ID",
+      "name": "Tên sản phẩm",
+      "slug": "Slug (URL)",
+      "category": "Danh mục",
+      "order": "Thứ tự",
+      "isActive": "Trạng thái",
+      "shortDescription": "Mô tả ngắn",
+      "fullDescription": "Mô tả đầy đủ",
+      "detailedContent": "Nội dung chi tiết",
+      "titleEm": "Tiêu đề nhấn mạnh",
+      "applications": "Ứng dụng",
+      "features": "Tính năng",
+      "featureTitle": "Tiêu đề tính năng",
+      "featureDescription": "Mô tả tính năng",
+      "specs": "Thông số kỹ thuật",
+      "advantages": "Ưu điểm",
+      "mediaType": "Loại media",
+      "videoUrl": "URL Video (YouTube)",
+      "mainImage": "Ảnh chính",
+      "detailImage": "Ảnh chi tiết",
+      "gallery": "Bộ sưu tập ảnh",
+      "ctaText": "Text nút CTA",
+      "ctaLink": "Link CTA",
+      "locale": "Ngôn ngữ",
+      "createdAt": "Ngày tạo",
+      "updatedAt": "Cập nhật lần cuối",
+      "publishedAt": "Ngày xuất bản"
+    },
+    "placeholders": {
+      "name": "Nhập tên sản phẩm...",
+      "slug": "may-cat-laser-uv",
+      "shortDescription": "Mô tả ngắn gọn về sản phẩm...",
+      "titleEm": "Laser",
+      "videoUrl": "https://www.youtube.com/watch?v=...",
+      "ctaText": "Xem chi tiết",
+      "ctaLink": "#"
+    },
+    "options": {
+      "active": "Hoạt động",
+      "inactive": "Không hoạt động",
+      "image": "Hình ảnh",
+      "video": "Video",
+      "showOnHomepage": "Hiển thị trên trang chủ"
+    },
+    "actions": {
+      "save": "Lưu thay đổi",
+      "cancel": "Hủy",
+      "delete": "Xóa sản phẩm",
+      "addFeature": "Thêm tính năng",
+      "removeFeature": "Xóa",
+      "addApplication": "Thêm ứng dụng"
+    },
+    "messages": {
+      "loading": "Đang tải...",
+      "notFound": "Không tìm thấy sản phẩm",
+      "saveSuccess": "Đã lưu thành công",
+      "saveError": "Lỗi khi lưu",
+      "deleteConfirm": "Bạn có chắc muốn xóa sản phẩm này?"
+    },
+    "help": {
+      "order": "Thứ tự ≥ 100: Hiển thị trên trang chủ",
+      "slug": "URL thân thiện SEO (tự động tạo từ tên)",
+      "titleEm": "Phần nhấn mạnh trong tiêu đề (VD: 'Laser', '激光')",
+      "mediaType": "Chọn 'Video' nếu muốn hiển thị YouTube video",
+      "gallery": "Tối thiểu 9 ảnh cho masonry grid trên trang chủ"
+    }
   }
 }
