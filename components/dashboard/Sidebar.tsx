@@ -37,15 +37,15 @@ export function Sidebar({ onNavigate }: SidebarProps) {
   };
 
   return (
-    <div className="flex h-full w-[85vw] max-w-sm flex-col border-r border-border bg-card shadow-2xl lg:w-64 lg:shadow-none">
+    <div className="flex h-full w-[85vw] max-w-sm flex-col border-r border-border bg-black shadow-2xl lg:w-64 lg:bg-card lg:shadow-none">
       {/* Logo */}
-      <div className="flex h-16 items-center border-b border-border px-6">
+      <div className="flex h-16 items-center border-b border-border bg-black px-6 lg:bg-card">
         <h1 className="text-xl font-bold text-primary">Yihuixuan</h1>
         <span className="ml-2 text-xs text-muted-foreground">Admin</span>
       </div>
 
       {/* Navigation */}
-      <nav className="flex-1 space-y-1 overflow-y-auto p-4">
+      <nav className="flex-1 space-y-1 overflow-y-auto bg-black p-4 lg:bg-card">
         {navigation.map((item) => {
           const isActive = pathname === item.href;
           return (
@@ -68,7 +68,7 @@ export function Sidebar({ onNavigate }: SidebarProps) {
       </nav>
 
       {/* Logout */}
-      <div className="border-t border-border p-4">
+      <div className="border-t border-border bg-black p-4 lg:bg-card">
         <button
           onClick={handleLogout}
           className="flex w-full items-center gap-3 rounded-lg px-3 py-2 text-sm font-medium text-muted-foreground transition-colors hover:bg-accent hover:text-accent-foreground"
