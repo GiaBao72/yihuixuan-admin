@@ -142,12 +142,12 @@
       "isActive": "Trạng thái",
       "shortDescription": "Mô tả ngắn",
       "fullDescription": "Mô tả đầy đủ",
-      "detailedContent": "Nội dung chi tiết",
-      "titleEm": "Tiêu đề nhấn mạnh",
+      "detailedContent": "Nội dung chi tiết (HTML)",
+      "titleEm": "Phần nhấn mạnh tiêu đề",
       "applications": "Ứng dụng",
       "features": "Tính năng",
-      "featureTitle": "Tiêu đề tính năng",
-      "featureDescription": "Mô tả tính năng",
+      "featureTitle": "Tiêu đề",
+      "featureDescription": "Mô tả",
       "specs": "Thông số kỹ thuật",
       "advantages": "Ưu điểm",
       "mediaType": "Loại media",
@@ -160,16 +160,24 @@
       "locale": "Ngôn ngữ",
       "createdAt": "Ngày tạo",
       "updatedAt": "Cập nhật lần cuối",
-      "publishedAt": "Ngày xuất bản"
+      "publishedAt": "Ngày xuất bản",
+      "status": "Trạng thái"
     },
     "placeholders": {
       "name": "Nhập tên sản phẩm...",
       "slug": "may-cat-laser-uv",
-      "shortDescription": "Mô tả ngắn gọn về sản phẩm...",
-      "titleEm": "Laser",
+      "shortDescription": "Mô tả ngắn gọn (tối đa 500 ký tự)",
+      "titleEm": "VD: Laser, 激光",
       "videoUrl": "https://www.youtube.com/watch?v=...",
       "ctaText": "Xem chi tiết",
-      "ctaLink": "#"
+      "ctaLink": "#",
+      "fullDescription": "Mô tả chi tiết về sản phẩm",
+      "detailedContent": "Nội dung HTML với bảng thông số kỹ thuật",
+      "application": "VD: Ngành ô tô",
+      "featureTitle": "VD: Công suất laser",
+      "featureDescription": "VD: 5W/10W tùy chọn",
+      "mediaTab": "Quản lý media (Phase 3)",
+      "seoTab": "Các trường SEO & marketing (Phase 3)"
     },
     "options": {
       "active": "Hoạt động",
@@ -194,11 +202,30 @@
       "deleteConfirm": "Bạn có chắc muốn xóa sản phẩm này?"
     },
     "help": {
-      "order": "Thứ tự ≥ 100: Hiển thị trên trang chủ",
-      "slug": "URL thân thiện SEO (tự động tạo từ tên)",
-      "titleEm": "Phần nhấn mạnh trong tiêu đề (VD: 'Laser', '激光')",
+      "order": "Order >= 100 hiển thị trên trang chủ",
+      "slug": "Định danh thân thiện với URL",
+      "titleEm": "Phần được làm nổi bật trong tiêu đề trang chủ",
       "mediaType": "Chọn 'Video' nếu muốn hiển thị YouTube video",
-      "gallery": "Tối thiểu 9 ảnh cho masonry grid trên trang chủ"
+      "gallery": "Tối thiểu 9 ảnh cho masonry grid trên trang chủ",
+      "detailedContent": "Hỗ trợ HTML. Dùng <table> cho bảng thông số.",
+      "applications": "Danh sách ngành/lĩnh vực ứng dụng"
+    },
+    "sections": {
+      "textContent": "Nội dung văn bản",
+      "basicInfo": "Thông tin cơ bản",
+      "systemInfo": "Thông tin hệ thống",
+      "media": "Media",
+      "seo": "SEO & Marketing"
+    },
+    "loading": "Đang tải...",
+    "save": "Lưu",
+    "delete": "Xóa",
+    "notFound": "Không tìm thấy sản phẩm",
+    "confirmDelete": "Bạn có chắc chắn muốn xóa?",
+    "backToList": "Quay lại danh sách",
+    "status": {
+      "active": "Hoạt động",
+      "inactive": "Không hoạt động"
     }
   }
 }

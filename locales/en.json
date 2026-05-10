@@ -142,12 +142,12 @@
       "isActive": "Status",
       "shortDescription": "Short Description",
       "fullDescription": "Full Description",
-      "detailedContent": "Detailed Content",
-      "titleEm": "Emphasized Title",
+      "detailedContent": "Detailed Content (HTML)",
+      "titleEm": "Title Emphasis",
       "applications": "Applications",
       "features": "Features",
-      "featureTitle": "Feature Title",
-      "featureDescription": "Feature Description",
+      "featureTitle": "Title",
+      "featureDescription": "Description",
       "specs": "Specifications",
       "advantages": "Advantages",
       "mediaType": "Media Type",
@@ -160,16 +160,24 @@
       "locale": "Language",
       "createdAt": "Created At",
       "updatedAt": "Last Updated",
-      "publishedAt": "Published At"
+      "publishedAt": "Published At",
+      "status": "Status"
     },
     "placeholders": {
       "name": "Enter product name...",
       "slug": "laser-cutting-machine",
-      "shortDescription": "Brief description of the product...",
-      "titleEm": "Laser",
+      "shortDescription": "Brief description (max 500 chars)",
+      "titleEm": "e.g., Laser, 激光",
       "videoUrl": "https://www.youtube.com/watch?v=...",
       "ctaText": "View Details",
-      "ctaLink": "#"
+      "ctaLink": "#",
+      "fullDescription": "Detailed product description",
+      "detailedContent": "HTML content with specs table",
+      "application": "e.g., Automotive industry",
+      "featureTitle": "e.g., Laser power",
+      "featureDescription": "e.g., 5W/10W optional",
+      "mediaTab": "Media management (Phase 3)",
+      "seoTab": "SEO & marketing fields (Phase 3)"
     },
     "options": {
       "active": "Active",
@@ -194,11 +202,30 @@
       "deleteConfirm": "Are you sure you want to delete this product?"
     },
     "help": {
-      "order": "Order ≥ 100: Show on homepage",
-      "slug": "SEO-friendly URL (auto-generated from name)",
-      "titleEm": "Emphasized part of title (e.g., 'Laser', '激光')",
+      "order": "Order >= 100 shows on homepage",
+      "slug": "URL-friendly identifier",
+      "titleEm": "Highlighted part of the title on homepage",
       "mediaType": "Choose 'Video' to display YouTube video",
-      "gallery": "Minimum 9 images for masonry grid on homepage"
+      "gallery": "Minimum 9 images for masonry grid on homepage",
+      "detailedContent": "Supports HTML. Use <table> for specs.",
+      "applications": "List of industries/use cases"
+    },
+    "sections": {
+      "textContent": "Text Content",
+      "basicInfo": "Basic Information",
+      "systemInfo": "System Information",
+      "media": "Media",
+      "seo": "SEO & Marketing"
+    },
+    "loading": "Loading...",
+    "save": "Save",
+    "delete": "Delete",
+    "notFound": "Product not found",
+    "confirmDelete": "Are you sure you want to delete?",
+    "backToList": "Back to list",
+    "status": {
+      "active": "Active",
+      "inactive": "Inactive"
     }
   }
 }

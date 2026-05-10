@@ -142,12 +142,12 @@
       "isActive": "状态",
       "shortDescription": "简短描述",
       "fullDescription": "完整描述",
-      "detailedContent": "详细内容",
-      "titleEm": "强调标题",
-      "applications": "应用",
-      "features": "特点",
-      "featureTitle": "特点标题",
-      "featureDescription": "特点描述",
+      "detailedContent": "详细内容 (HTML)",
+      "titleEm": "标题强调",
+      "applications": "应用领域",
+      "features": "产品特点",
+      "featureTitle": "标题",
+      "featureDescription": "描述",
       "specs": "技术规格",
       "advantages": "优势",
       "mediaType": "媒体类型",
@@ -160,16 +160,24 @@
       "locale": "语言",
       "createdAt": "创建时间",
       "updatedAt": "最后更新",
-      "publishedAt": "发布时间"
+      "publishedAt": "发布时间",
+      "status": "状态"
     },
     "placeholders": {
       "name": "输入产品名称...",
       "slug": "laser-cutting-machine",
-      "shortDescription": "产品简要描述...",
-      "titleEm": "激光",
+      "shortDescription": "简短描述（最多500字符）",
+      "titleEm": "例如：激光、Laser",
       "videoUrl": "https://www.youtube.com/watch?v=...",
       "ctaText": "查看详情",
-      "ctaLink": "#"
+      "ctaLink": "#",
+      "fullDescription": "产品详细描述",
+      "detailedContent": "包含规格表的HTML内容",
+      "application": "例如：汽车行业",
+      "featureTitle": "例如：激光功率",
+      "featureDescription": "例如：5W/10W可选",
+      "mediaTab": "媒体管理（第三阶段）",
+      "seoTab": "SEO和营销字段（第三阶段）"
     },
     "options": {
       "active": "活跃",
@@ -194,11 +202,30 @@
       "deleteConfirm": "您确定要删除此产品吗？"
     },
     "help": {
-      "order": "顺序 ≥ 100: 在首页显示",
-      "slug": "SEO友好的URL（从名称自动生成）",
-      "titleEm": "标题的强调部分（例如：'Laser'，'激光'）",
+      "order": "Order >= 100 显示在首页",
+      "slug": "URL友好标识符",
+      "titleEm": "首页标题中突出显示的部分",
       "mediaType": "选择'视频'以显示YouTube视频",
-      "gallery": "首页masonry网格至少需要9张图片"
+      "gallery": "首页masonry网格至少需要9张图片",
+      "detailedContent": "支持HTML。使用<table>显示规格。",
+      "applications": "行业/用例列表"
+    },
+    "sections": {
+      "textContent": "文本内容",
+      "basicInfo": "基本信息",
+      "systemInfo": "系统信息",
+      "media": "媒体",
+      "seo": "SEO与营销"
+    },
+    "loading": "加载中...",
+    "save": "保存",
+    "delete": "删除",
+    "notFound": "未找到产品",
+    "confirmDelete": "确定要删除吗？",
+    "backToList": "返回列表",
+    "status": {
+      "active": "激活",
+      "inactive": "未激活"
     }
   }
 }
