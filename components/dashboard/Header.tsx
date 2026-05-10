@@ -15,10 +15,10 @@ export function Header() {
   ];
 
   return (
-    <header className="flex h-16 items-center justify-between border-b border-border bg-card px-6">
+    <header className="flex h-16 items-center justify-between border-b border-border bg-card px-6 pl-16 lg:pl-6">
       {/* Search */}
       <div className="flex flex-1 items-center gap-4">
-        <div className="relative w-96">
+        <div className="relative w-full max-w-96">
           <Search className="absolute left-3 top-3 h-4 w-4 text-muted-foreground" />
           <Input
             type="search"
@@ -59,7 +59,7 @@ export function Header() {
           <span className="absolute right-2 top-2 h-2 w-2 rounded-full bg-destructive" />
         </Button>
 
-        <div className="flex items-center gap-3 rounded-lg border border-border px-3 py-2">
+        <div className="hidden items-center gap-3 rounded-lg border border-border px-3 py-2 lg:flex">
           <User className="h-5 w-5 text-muted-foreground" />
           <div className="text-sm">
             <p className="font-medium">Admin</p>
