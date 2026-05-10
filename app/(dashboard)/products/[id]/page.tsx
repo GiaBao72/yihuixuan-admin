@@ -9,6 +9,8 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { FeaturesInput } from "@/components/FeaturesInput";
 import { ArrayInput } from "@/components/ArrayInput";
+import { ImageUpload } from "@/components/ImageUpload";
+import { GalleryUpload } from "@/components/GalleryUpload";
 import { ArrowLeft, Save, Trash2 } from "lucide-react";
 
 interface ProductData {
@@ -25,6 +27,15 @@ interface ProductData {
     titleEm: string;
     applications: string[];
     features: Array<{ title: string; description: string }>;
+    mainImage?: { data?: { attributes: { url: string } } };
+    detailImage?: { data?: { attributes: { url: string } } };
+    gallery?: { data?: Array<{ attributes: { url: string } }> };
+    mediaType?: string;
+    videoUrl?: string;
+    specs?: any;
+    advantages?: string[];
+    ctaText?: string;
+    ctaLink?: string;
     locale: string;
     createdAt: string;
     updatedAt: string;
@@ -38,6 +49,7 @@ export default function ProductDetailPage() {
   const { t, locale } = useI18n();
   const [product, setProduct] = useState<ProductData | null>(null);
   const [loading, setLoading] = useState(true);
+  const [saving, setSaving] = useState(false);
   const [activeTab, setActiveTab] = useState<"basic" | "content" | "media" | "seo">("basic");
 
   useEffect(() => {
@@ -77,13 +89,51 @@ export default function ProductDetailPage() {
     );
   }
 
-  const handleSave = () => {
-    alert("Save functionality will be implemented in Phase 3");
+  const handleSave = async () => {
+    if (!product) return;
+    
+    setSaving(true);
+    try {
+      const response = await fetch(`/api/products/${product.id}`, {
+        method: "PUT",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          data: product.attributes,
+        }),
+      });
+
+      if (!response.ok) throw new Error("Failed to save");
+      
+      alert(t.productDetail?.saveSuccess || "Saved successfully!");
+      
+      // Refresh data
+      const refreshResponse = await fetch(`/api/products/${product.id}?locale=${locale}`);
+      const refreshData = await refreshResponse.json();
+      setProduct(refreshData.data);
+    } catch (error) {
+      console.error("Save error:", error);
+      alert(t.productDetail?.saveError || "Failed to save");
+    } finally {
+      setSaving(false);
+    }
   };
 
-  const handleDelete = () => {
-    if (confirm(t.productDetail?.confirmDelete || "Are you sure?")) {
-      alert("Delete functionality will be implemented in Phase 3");
+  const handleDelete = async () => {
+    if (!product) return;
+    if (!confirm(t.productDetail?.confirmDelete || "Are you sure?")) return;
+
+    try {
+      const response = await fetch(`/api/products/${product.id}`, {
+        method: "DELETE",
+      });
+
+      if (!response.ok) throw new Error("Failed to delete");
+      
+      alert(t.productDetail?.deleteSuccess || "Deleted successfully!");
+      router.push("/products");
+    } catch (error) {
+      console.error("Delete error:", error);
+      alert(t.productDetail?.deleteError || "Failed to delete");
     }
   };
 

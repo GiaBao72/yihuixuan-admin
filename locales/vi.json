@@ -148,15 +148,15 @@
       "features": "Tính năng",
       "featureTitle": "Tiêu đề",
       "featureDescription": "Mô tả",
-      "specs": "Thông số kỹ thuật",
-      "advantages": "Ưu điểm",
+      "specs": "Thông số (JSON)",
+      "advantages": "Ưu điểm sản phẩm",
       "mediaType": "Loại media",
-      "videoUrl": "URL Video (YouTube)",
+      "videoUrl": "URL Video",
       "mainImage": "Ảnh chính",
       "detailImage": "Ảnh chi tiết",
-      "gallery": "Bộ sưu tập ảnh",
-      "ctaText": "Text nút CTA",
-      "ctaLink": "Link CTA",
+      "gallery": "Thư viện ảnh",
+      "ctaText": "Văn bản CTA",
+      "ctaLink": "Liên kết CTA",
       "locale": "Ngôn ngữ",
       "createdAt": "Ngày tạo",
       "updatedAt": "Cập nhật lần cuối",
@@ -169,15 +169,16 @@
       "shortDescription": "Mô tả ngắn gọn (tối đa 500 ký tự)",
       "titleEm": "VD: Laser, 激光",
       "videoUrl": "https://www.youtube.com/watch?v=...",
-      "ctaText": "Xem chi tiết",
-      "ctaLink": "#",
+      "ctaText": "Tìm hiểu thêm",
+      "ctaLink": "/lien-he",
       "fullDescription": "Mô tả chi tiết về sản phẩm",
       "detailedContent": "Nội dung HTML với bảng thông số kỹ thuật",
       "application": "VD: Ngành ô tô",
       "featureTitle": "VD: Công suất laser",
       "featureDescription": "VD: 5W/10W tùy chọn",
       "mediaTab": "Quản lý media (Phase 3)",
-      "seoTab": "Các trường SEO & marketing (Phase 3)"
+      "seoTab": "Các trường SEO & marketing (Phase 3)",
+      "advantage": "Nhập ưu điểm"
     },
     "options": {
       "active": "Hoạt động",
@@ -206,16 +207,25 @@
       "slug": "Định danh thân thiện với URL",
       "titleEm": "Phần được làm nổi bật trong tiêu đề trang chủ",
       "mediaType": "Chọn 'Video' nếu muốn hiển thị YouTube video",
-      "gallery": "Tối thiểu 9 ảnh cho masonry grid trên trang chủ",
+      "gallery": "Ảnh sản phẩm bổ sung",
       "detailedContent": "Hỗ trợ HTML. Dùng <table> cho bảng thông số.",
-      "applications": "Danh sách ngành/lĩnh vực ứng dụng"
+      "applications": "Danh sách ngành/lĩnh vực ứng dụng",
+      "mainImage": "Ảnh sản phẩm chính (trang chủ & danh sách)",
+      "detailImage": "Ảnh hero cho trang chi tiết sản phẩm",
+      "videoUrl": "URL YouTube hoặc Vimeo",
+      "specs": "Thông số kỹ thuật ở định dạng JSON"
     },
     "sections": {
       "textContent": "Nội dung văn bản",
       "basicInfo": "Thông tin cơ bản",
       "systemInfo": "Thông tin hệ thống",
       "media": "Media",
-      "seo": "SEO & Marketing"
+      "seo": "SEO & Marketing",
+      "images": "Hình ảnh",
+      "video": "Video",
+      "specifications": "Thông số kỹ thuật",
+      "advantages": "Ưu điểm",
+      "cta": "Kêu gọi hành động"
     },
     "loading": "Đang tải...",
     "save": "Lưu",
@@ -226,6 +236,15 @@
     "status": {
       "active": "Hoạt động",
       "inactive": "Không hoạt động"
-    }
+    },
+    "mediaTypes": {
+      "image": "Hình ảnh",
+      "video": "Video"
+    },
+    "saveSuccess": "Lưu thành công!",
+    "saveError": "Lưu thất bại",
+    "deleteSuccess": "Xóa thành công!",
+    "deleteError": "Xóa thất bại",
+    "saving": "Đang lưu..."
   }
 }

@@ -148,14 +148,14 @@
       "features": "产品特点",
       "featureTitle": "标题",
       "featureDescription": "描述",
-      "specs": "技术规格",
-      "advantages": "优势",
+      "specs": "规格 (JSON)",
+      "advantages": "产品优势",
       "mediaType": "媒体类型",
-      "videoUrl": "视频URL (YouTube)",
+      "videoUrl": "视频链接",
       "mainImage": "主图",
       "detailImage": "详情图",
       "gallery": "图库",
-      "ctaText": "CTA按钮文本",
+      "ctaText": "CTA文本",
       "ctaLink": "CTA链接",
       "locale": "语言",
       "createdAt": "创建时间",
@@ -169,15 +169,16 @@
       "shortDescription": "简短描述（最多500字符）",
       "titleEm": "例如：激光、Laser",
       "videoUrl": "https://www.youtube.com/watch?v=...",
-      "ctaText": "查看详情",
-      "ctaLink": "#",
+      "ctaText": "了解更多",
+      "ctaLink": "/联系",
       "fullDescription": "产品详细描述",
       "detailedContent": "包含规格表的HTML内容",
       "application": "例如：汽车行业",
       "featureTitle": "例如：激光功率",
       "featureDescription": "例如：5W/10W可选",
       "mediaTab": "媒体管理（第三阶段）",
-      "seoTab": "SEO和营销字段（第三阶段）"
+      "seoTab": "SEO和营销字段（第三阶段）",
+      "advantage": "输入优势"
     },
     "options": {
       "active": "活跃",
@@ -206,16 +207,25 @@
       "slug": "URL友好标识符",
       "titleEm": "首页标题中突出显示的部分",
       "mediaType": "选择'视频'以显示YouTube视频",
-      "gallery": "首页masonry网格至少需要9张图片",
+      "gallery": "其他产品图片",
       "detailedContent": "支持HTML。使用<table>显示规格。",
-      "applications": "行业/用例列表"
+      "applications": "行业/用例列表",
+      "mainImage": "主要产品图片（首页和列表）",
+      "detailImage": "产品详情页主图",
+      "videoUrl": "YouTube或Vimeo链接",
+      "specs": "JSON格式的技术规格"
     },
     "sections": {
       "textContent": "文本内容",
       "basicInfo": "基本信息",
       "systemInfo": "系统信息",
       "media": "媒体",
-      "seo": "SEO与营销"
+      "seo": "SEO与营销",
+      "images": "图片",
+      "video": "视频",
+      "specifications": "规格",
+      "advantages": "优势",
+      "cta": "行动号召"
     },
     "loading": "加载中...",
     "save": "保存",
@@ -226,6 +236,15 @@
     "status": {
       "active": "激活",
       "inactive": "未激活"
-    }
+    },
+    "mediaTypes": {
+      "image": "图片",
+      "video": "视频"
+    },
+    "saveSuccess": "保存成功！",
+    "saveError": "保存失败",
+    "deleteSuccess": "删除成功！",
+    "deleteError": "删除失败",
+    "saving": "保存中..."
   }
 }

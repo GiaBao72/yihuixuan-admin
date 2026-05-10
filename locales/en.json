@@ -148,14 +148,14 @@
       "features": "Features",
       "featureTitle": "Title",
       "featureDescription": "Description",
-      "specs": "Specifications",
-      "advantages": "Advantages",
+      "specs": "Specs (JSON)",
+      "advantages": "Product Advantages",
       "mediaType": "Media Type",
-      "videoUrl": "Video URL (YouTube)",
+      "videoUrl": "Video URL",
       "mainImage": "Main Image",
       "detailImage": "Detail Image",
       "gallery": "Gallery",
-      "ctaText": "CTA Button Text",
+      "ctaText": "CTA Text",
       "ctaLink": "CTA Link",
       "locale": "Language",
       "createdAt": "Created At",
@@ -169,15 +169,16 @@
       "shortDescription": "Brief description (max 500 chars)",
       "titleEm": "e.g., Laser, 激光",
       "videoUrl": "https://www.youtube.com/watch?v=...",
-      "ctaText": "View Details",
-      "ctaLink": "#",
+      "ctaText": "Learn More",
+      "ctaLink": "/contact",
       "fullDescription": "Detailed product description",
       "detailedContent": "HTML content with specs table",
       "application": "e.g., Automotive industry",
       "featureTitle": "e.g., Laser power",
       "featureDescription": "e.g., 5W/10W optional",
       "mediaTab": "Media management (Phase 3)",
-      "seoTab": "SEO & marketing fields (Phase 3)"
+      "seoTab": "SEO & marketing fields (Phase 3)",
+      "advantage": "Enter advantage"
     },
     "options": {
       "active": "Active",
@@ -206,16 +207,25 @@
       "slug": "URL-friendly identifier",
       "titleEm": "Highlighted part of the title on homepage",
       "mediaType": "Choose 'Video' to display YouTube video",
-      "gallery": "Minimum 9 images for masonry grid on homepage",
+      "gallery": "Additional product images",
       "detailedContent": "Supports HTML. Use <table> for specs.",
-      "applications": "List of industries/use cases"
+      "applications": "List of industries/use cases",
+      "mainImage": "Primary product image (homepage & listing)",
+      "detailImage": "Hero image for product detail page",
+      "videoUrl": "YouTube or Vimeo URL",
+      "specs": "Technical specifications in JSON format"
     },
     "sections": {
       "textContent": "Text Content",
       "basicInfo": "Basic Information",
       "systemInfo": "System Information",
       "media": "Media",
-      "seo": "SEO & Marketing"
+      "seo": "SEO & Marketing",
+      "images": "Images",
+      "video": "Video",
+      "specifications": "Specifications",
+      "advantages": "Advantages",
+      "cta": "Call to Action"
     },
     "loading": "Loading...",
     "save": "Save",
@@ -226,6 +236,15 @@
     "status": {
       "active": "Active",
       "inactive": "Inactive"
-    }
+    },
+    "mediaTypes": {
+      "image": "Image",
+      "video": "Video"
+    },
+    "saveSuccess": "Saved successfully!",
+    "saveError": "Failed to save",
+    "deleteSuccess": "Deleted successfully!",
+    "deleteError": "Failed to delete",
+    "saving": "Saving..."
   }
 }
