@@ -102,13 +102,13 @@ export default function FeaturedDetailPage() {
       });
 
       if (response.ok) {
-        alert("Đã lưu thành công!");
+        alert("Saved successfully!");
         router.push("/featured");
       } else {
-        alert("Lỗi khi lưu. Vui lòng thử lại.");
+        alert("Failed to save. Please try again.");
       }
     } catch (error) {
-      alert("Lỗi khi lưu. Vui lòng thử lại.");
+      alert("Failed to save. Please try again.");
     } finally {
       setSaving(false);
     }
@@ -119,7 +119,7 @@ export default function FeaturedDetailPage() {
       <div className="flex h-96 items-center justify-center">
         <div className="text-center">
           <Loader2 className="h-8 w-8 animate-spin mx-auto mb-4 text-primary" />
-          <p className="text-sm text-muted-foreground">Đang tải...</p>
+          <p className="text-sm text-muted-foreground">Loading...</p>
         </div>
       </div>
     );
@@ -128,7 +128,7 @@ export default function FeaturedDetailPage() {
   if (!feature) {
     return (
       <div className="flex h-96 items-center justify-center">
-        <p className="text-sm text-muted-foreground">Không tìm thấy dữ liệu</p>
+        <p className="text-sm text-muted-foreground">Feature not found</p>
       </div>
     );
   }
@@ -146,8 +146,8 @@ export default function FeaturedDetailPage() {
           </Button>
         </Link>
         <div>
-          <h1 className="text-3xl font-bold text-gray-900">Chỉnh sửa sản phẩm nổi bật</h1>
-          <p className="text-gray-600 mt-1">ID: {feature.id}</p>
+          <h1 className="text-3xl font-bold tracking-tight">Edit Featured Item</h1>
+          <p className="text-muted-foreground mt-1">ID: {feature.id}</p>
         </div>
       </div>
 
@@ -156,36 +156,39 @@ export default function FeaturedDetailPage() {
           <div className="lg:col-span-2 space-y-6">
             <Card>
               <CardHeader>
-                <CardTitle>Thông tin cơ bản</CardTitle>
+                <CardTitle>Basic Information</CardTitle>
               </CardHeader>
               <CardContent className="space-y-4">
                 <div>
-                  <Label htmlFor="name">Tên sản phẩm *</Label>
+                  <Label htmlFor="name">Product Name *</Label>
                   <Input
                     id="name"
                     value={formData.name}
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                     required
+                    className="mt-1.5"
                   />
                 </div>
 
                 <div>
-                  <Label htmlFor="titleEm">Tiêu đề nhấn mạnh</Label>
+                  <Label htmlFor="titleEm">Emphasized Title</Label>
                   <Input
                     id="titleEm"
                     value={formData.titleEm}
                     onChange={(e) => setFormData({ ...formData, titleEm: e.target.value })}
-                    placeholder="Văn bản được highlight"
+                    placeholder="Highlighted text"
+                    className="mt-1.5"
                   />
                 </div>
 
                 <div>
-                  <Label htmlFor="description">Mô tả</Label>
+                  <Label htmlFor="description">Description</Label>
                   <Textarea
                     id="description"
                     value={formData.description}
                     onChange={(e) => setFormData({ ...formData, description: e.target.value })}
                     rows={4}
+                    className="mt-1.5"
                   />
                 </div>
               </CardContent>
@@ -197,36 +200,37 @@ export default function FeaturedDetailPage() {
               </CardHeader>
               <CardContent className="space-y-4">
                 <div>
-                  <Label htmlFor="mediaType">Loại media</Label>
+                  <Label htmlFor="mediaType">Media Type</Label>
                   <select
                     id="mediaType"
                     value={formData.mediaType}
                     onChange={(e) =>
                       setFormData({ ...formData, mediaType: e.target.value as "image" | "video" })
                     }
-                    className="w-full rounded-md border border-input bg-background px-3 py-2 text-sm"
+                    className="w-full rounded-md border border-input bg-background px-3 py-2 text-sm mt-1.5 ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
                   >
-                    <option value="image">Hình ảnh</option>
+                    <option value="image">Image</option>
                     <option value="video">Video</option>
                   </select>
                 </div>
 
                 {formData.mediaType === "video" && (
                   <div>
-                    <Label htmlFor="videoUrl">URL Video (YouTube)</Label>
+                    <Label htmlFor="videoUrl">Video URL (YouTube)</Label>
                     <Input
                       id="videoUrl"
                       value={formData.videoUrl}
                       onChange={(e) => setFormData({ ...formData, videoUrl: e.target.value })}
                       placeholder="https://www.youtube.com/embed/..."
+                      className="mt-1.5"
                     />
                   </div>
                 )}
 
                 {imageUrl && formData.mediaType === "image" && (
                   <div>
-                    <Label>Ảnh chính hiện tại</Label>
-                    <div className="relative h-48 w-full rounded-md overflow-hidden border border-gray-200 mt-2">
+                    <Label>Current Main Image</Label>
+                    <div className="relative h-48 w-full rounded-md overflow-hidden border mt-1.5">
                       <Image src={imageUrl} alt={formData.name} fill className="object-cover" unoptimized />
                     </div>
                   </div>
@@ -240,22 +244,24 @@ export default function FeaturedDetailPage() {
               </CardHeader>
               <CardContent className="space-y-4">
                 <div>
-                  <Label htmlFor="ctaText">Văn bản nút CTA</Label>
+                  <Label htmlFor="ctaText">CTA Button Text</Label>
                   <Input
                     id="ctaText"
                     value={formData.ctaText}
                     onChange={(e) => setFormData({ ...formData, ctaText: e.target.value })}
-                    placeholder="Xem chi tiết →"
+                    placeholder="Learn More →"
+                    className="mt-1.5"
                   />
                 </div>
 
                 <div>
-                  <Label htmlFor="ctaLink">Link CTA</Label>
+                  <Label htmlFor="ctaLink">CTA Link</Label>
                   <Input
                     id="ctaLink"
                     value={formData.ctaLink}
                     onChange={(e) => setFormData({ ...formData, ctaLink: e.target.value })}
                     placeholder="/products/..."
+                    className="mt-1.5"
                   />
                 </div>
               </CardContent>
@@ -265,17 +271,18 @@ export default function FeaturedDetailPage() {
           <div className="space-y-6">
             <Card>
               <CardHeader>
-                <CardTitle>Cài đặt</CardTitle>
+                <CardTitle>Settings</CardTitle>
               </CardHeader>
               <CardContent className="space-y-4">
                 <div>
-                  <Label htmlFor="order">Thứ tự hiển thị</Label>
+                  <Label htmlFor="order">Display Order</Label>
                   <Input
                     id="order"
                     type="number"
                     min="1"
                     value={formData.order}
                     onChange={(e) => setFormData({ ...formData, order: parseInt(e.target.value) || 1 })}
+                    className="mt-1.5"
                   />
                 </div>
 
@@ -285,15 +292,15 @@ export default function FeaturedDetailPage() {
                     id="isActive"
                     checked={formData.isActive}
                     onChange={(e) => setFormData({ ...formData, isActive: e.target.checked })}
-                    className="h-4 w-4 rounded border-gray-300"
+                    className="h-4 w-4 rounded border-input"
                   />
                   <Label htmlFor="isActive" className="cursor-pointer">
-                    Hiển thị trên trang chủ
+                    Show on homepage
                   </Label>
                 </div>
 
                 <div className="pt-4 border-t">
-                  <p className="text-xs text-gray-500 mb-1">Ngôn ngữ hiện tại</p>
+                  <p className="text-xs text-muted-foreground mb-1">Current Language</p>
                   <p className="text-sm font-medium">{locale.toUpperCase()}</p>
                 </div>
               </CardContent>
@@ -303,12 +310,12 @@ export default function FeaturedDetailPage() {
               {saving ? (
                 <>
                   <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-                  Đang lưu...
+                  Saving...
                 </>
               ) : (
                 <>
                   <Save className="mr-2 h-4 w-4" />
-                  Lưu thay đổi
+                  Save Changes
                 </>
               )}
             </Button>
