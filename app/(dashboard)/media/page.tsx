@@ -66,7 +66,7 @@ export default function MediaPage() {
               {images.map((image) => (
                 <div
                   key={image.id}
-                  className="group relative overflow-hidden rounded-lg border border-border bg-card transition-all hover:border-primary hover:shadow-lg"
+                  className="group relative overflow-hidden rounded-lg border border-border bg-card text-card-foreground transition-all hover:border-primary hover:shadow-lg"
                 >
                   <div className="aspect-square bg-accent p-4">
                     <div className="flex h-full items-center justify-center">

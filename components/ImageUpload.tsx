@@ -82,7 +82,7 @@ export function ImageUpload({ value, onChange, label, helpText }: ImageUploadPro
           </div>
 
           {/* Actions */}
-          <div className="p-3 border-t bg-card flex items-center justify-between gap-2">
+          <div className="p-3 border-t bg-card text-card-foreground flex items-center justify-between gap-2">
             <a
               href={value}
               target="_blank"
@@ -155,7 +155,7 @@ export function ImageUpload({ value, onChange, label, helpText }: ImageUploadPro
                 value={urlInput}
                 onChange={(e) => setUrlInput(e.target.value)}
                 placeholder="https://example.com/image.jpg"
-                className="flex-1 px-3 py-2 text-sm border rounded-md bg-background"
+                className="flex-1 px-3 py-2 text-sm border rounded-md bg-background text-foreground"
                 onKeyDown={(e) => {
                   if (e.key === "Enter") handleUrlSubmit();
                 }}

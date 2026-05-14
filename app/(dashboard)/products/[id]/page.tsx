@@ -163,7 +163,7 @@ export default function ProductDetailPage() {
   return (
     <div className="flex h-full flex-col">
       {/* Header */}
-      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 sm:gap-0 border-b border-border bg-card px-4 sm:px-6 py-3 sm:py-4">
+      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 sm:gap-0 border-b border-border bg-card text-card-foreground px-4 sm:px-6 py-3 sm:py-4">
         <div className="flex items-center gap-2 sm:gap-4">
           <Button
             variant="ghost"
@@ -194,7 +194,7 @@ export default function ProductDetailPage() {
       </div>
 
       {/* Tabs */}
-      <div className="border-b border-border bg-card px-4 sm:px-6">
+      <div className="border-b border-border bg-card text-card-foreground px-4 sm:px-6">
         <div className="flex gap-4 sm:gap-6 overflow-x-auto scrollbar-hide">
           {["basic", "content", "media", "seo"].map((tab) => (
             <button
