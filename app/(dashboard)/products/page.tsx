@@ -1,8 +1,7 @@
 "use client";
 
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Package, Eye, Edit, Plus, Search } from "lucide-react";
-import { useI18n } from "@/contexts/I18nContext";
+import { Package, Edit, Plus, Search } from "lucide-react";
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import { Input } from "@/components/ui/input";
@@ -26,21 +25,20 @@ interface Product {
 }
 
 export default function ProductsPage() {
-  const { t, locale } = useI18n();
   const [products, setProducts] = useState<Product[]>([]);
   const [loading, setLoading] = useState(true);
   const [searchQuery, setSearchQuery] = useState("");
 
   useEffect(() => {
     setLoading(true);
-    fetch(`/api/products?locale=${locale}`)
+    fetch(`/api/products?locale=vi`)
       .then(res => res.json())
       .then(data => {
         setProducts(data.data || []);
         setLoading(false);
       })
       .catch(() => setLoading(false));
-  }, [locale]);
+  }, []);
 
   const filteredProducts = products.filter(p => 
     p.attributes.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
@@ -52,7 +50,7 @@ export default function ProductsPage() {
       <div className="flex h-96 items-center justify-center">
         <div className="text-center">
           <div className="h-8 w-8 animate-spin rounded-full border-4 border-primary border-t-transparent mx-auto mb-4"></div>
-          <p className="text-sm text-muted-foreground">Loading products...</p>
+          <p className="text-sm text-muted-foreground">Đang tải sản phẩm...</p>
         </div>
       </div>
     );
@@ -63,15 +61,15 @@ export default function ProductsPage() {
       {/* Header */}
       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
         <div>
-          <h1 className="text-3xl font-bold text-gray-900">{t.products.title}</h1>
-          <p className="text-gray-600 mt-1">{t.products.subtitle}</p>
+          <h1 className="text-3xl font-bold text-gray-900">Quản lý sản phẩm</h1>
+          <p className="text-gray-600 mt-1">Quản lý danh sách sản phẩm của bạn</p>
         </div>
         <button 
-          onClick={() => alert("Add Product feature coming soon!")}
+          onClick={() => alert("Tính năng thêm sản phẩm đang phát triển!")}
           className="inline-flex items-center justify-center gap-2 rounded-lg bg-gradient-to-r from-primary to-primary/90 px-4 py-2.5 text-sm font-medium text-white shadow-md shadow-primary/30 hover:shadow-lg hover:shadow-primary/40 hover:scale-105 active:scale-95 transition-all duration-200"
         >
           <Plus className="h-4 w-4" />
-          {t.products.addProduct}
+          Thêm sản phẩm
         </button>
       </div>
 
@@ -80,7 +78,7 @@ export default function ProductsPage() {
         <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-gray-400" />
         <Input
           type="search"
-          placeholder="Search products..."
+          placeholder="Tìm kiếm sản phẩm..."
           value={searchQuery}
           onChange={(e) => setSearchQuery(e.target.value)}
           className="pl-9 bg-white border-gray-200 focus:border-primary focus:ring-2 focus:ring-primary/20"
@@ -91,7 +89,7 @@ export default function ProductsPage() {
       <Card className="shadow-sm border-gray-200">
         <CardHeader className="border-b border-gray-100 bg-gray-50/50">
           <CardTitle className="text-lg font-semibold text-gray-900">
-            {t.products.allProducts} ({filteredProducts.length})
+            Tất cả sản phẩm ({filteredProducts.length})
           </CardTitle>
         </CardHeader>
         <CardContent className="p-0">
@@ -99,12 +97,12 @@ export default function ProductsPage() {
             <table className="w-full">
               <thead>
                 <tr className="border-b border-gray-100 bg-gray-50/30 text-left text-xs font-medium text-gray-600 uppercase tracking-wider">
-                  <th className="px-6 py-4 w-16">{t.products.table.order}</th>
-                  <th className="px-6 py-4 w-20">{t.products.table.image}</th>
-                  <th className="px-6 py-4">{t.products.table.name}</th>
-                  <th className="px-6 py-4 w-32">{t.products.table.category}</th>
-                  <th className="px-6 py-4 w-24">{t.products.table.status}</th>
-                  <th className="px-6 py-4 w-32 text-right">{t.products.table.actions}</th>
+                  <th className="px-6 py-4 w-16">Thứ tự</th>
+                  <th className="px-6 py-4 w-20">Hình ảnh</th>
+                  <th className="px-6 py-4">Tên sản phẩm</th>
+                  <th className="px-6 py-4 w-32">Danh mục</th>
+                  <th className="px-6 py-4 w-24">Trạng thái</th>
+                  <th className="px-6 py-4 w-32 text-right">Thao tác</th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-gray-100">
@@ -112,7 +110,7 @@ export default function ProductsPage() {
                   <tr>
                     <td colSpan={6} className="px-6 py-12 text-center">
                       <Package className="h-12 w-12 mx-auto mb-3 text-gray-300" />
-                      <p className="text-sm text-gray-500">No products found</p>
+                      <p className="text-sm text-gray-500">Không tìm thấy sản phẩm</p>
                     </td>
                   </tr>
                 ) : (
@@ -152,7 +150,7 @@ export default function ProductsPage() {
                         <div className="max-w-md">
                           <p className="font-medium text-gray-900 mb-0.5">{product.attributes.name}</p>
                           <p className="text-sm text-gray-500 line-clamp-1">
-                            {product.attributes.shortDescription || "No description"}
+                            {product.attributes.shortDescription || "Chưa có mô tả"}
                           </p>
                         </div>
                       </td>
@@ -171,7 +169,7 @@ export default function ProductsPage() {
                             ? "bg-green-50 text-green-700 border-green-100"
                             : "bg-red-50 text-red-700 border-red-100"
                         }`}>
-                          {product.attributes.isActive ? t.products.table.active : t.products.table.inactive}
+                          {product.attributes.isActive ? "Hoạt động" : "Tạm ẩn"}
                         </span>
                       </td>
 
@@ -182,7 +180,7 @@ export default function ProductsPage() {
                           className="inline-flex items-center gap-2 rounded-lg border border-gray-200 bg-white px-3 py-1.5 text-sm font-medium text-gray-700 hover:bg-gray-50 hover:border-gray-300 hover:shadow-sm transition-all duration-150"
                         >
                           <Edit className="h-3.5 w-3.5" />
-                          {t.products.table.edit}
+                          Chỉnh sửa
                         </button>
                       </td>
                     </tr>
